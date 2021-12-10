@@ -83,12 +83,14 @@ ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
 //     ctx.stroke(); 
 // }
 
+
     // ctx.beginPath();
     // ctx.arc(300, 300, 30, 0, Math.PI * 2, false);
     // ctx.strokeStyle = 'blue';
-    // ctx.stroke(); 
+    // ctx.stroke();  
 
-    let mov = 200;
+let mov = 200;
+
     let vel = 2; //1 pixel per frame
     function animate() {
         requestAnimationFrame(animate);
