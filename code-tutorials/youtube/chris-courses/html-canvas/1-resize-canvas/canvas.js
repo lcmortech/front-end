@@ -104,4 +104,3 @@ ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
     }
 
     animate();
-
