@@ -11,7 +11,21 @@
 	</ul>
 	<script type="text/javascript">
 		const myList = document.getElementById('myList')
-		const doc
+		const docFrag = document.createDocumentFragment()
+		
+		let item1 = document.createElement('li')
+		let item2 = document.createElement('li')
+		
+		item1.textContent = "Apples"
+		item2.textContent = "Bananas"
+		
+		docFrag.appendChild(item1)
+		docFrag.appendChild(item2)
+		
+		//console.log(docFrag)
+		myList.appendChild(docFrag) //allows you append more content at once
+		// gets moved to the element itself
+		
 	</script>
 </body>
 </html>
