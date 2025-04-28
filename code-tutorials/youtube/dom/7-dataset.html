@@ -6,7 +6,16 @@
 </head>
 <body>
 	<h2 id="title">Dataset</h2>
-	<div id="my-div" data-name="coder" data-started-coding="15">Sample Text</div>
-	<script type="text/javascript"></script>
+	<div id="my-div" data-name="coder" data-started-coding="12">Sample Text</div>
+	<script type="text/javascript">
+		const myDiv = document.getElementById('my-div')
+		
+		//console.log(myDiv.dataset)
+		myDiv.dataset.name = 'developer'
+		myDiv.dataset.started-coding = 14
+		
+		myDiv.dataset.name = ''
+		myDiv.removeAttribute('data-name')
+	</script>
 </body>
 </html>
