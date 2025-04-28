@@ -12,11 +12,25 @@
 </head>
 <body>
 	<h2 id="title">Class List</h2>
-	<p id="myPara">
+	<p id="my-para">
 		Yeah bro
 	</p>
 	<script>
+		const myPara = document.getElementById('my-para')
+		//console.log(myPara.classList)
+		myPara.classList.add('bold', 'big-font')
+		myPara.classList.remove('bold')
+		myPara.classList.replace('big-font', 'red-bg')
 		
+		
+		myPara.classList.toggle('red-bg')
+		myPara.classList.toggle('red-bg')
+		
+		console.log(myPara.classList.contains('white-text'))
+		console.log(myPara.classList.contains('red-bg'))
+		
+		//alert('hello world')
+		//prompt('Name?')
 	</script>
 </body>
 </html>
