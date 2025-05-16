@@ -1,4 +1,5 @@
 import "./App.css"
+import chef from "./images/chef.jpg"
 
 let lang = "React";
 let atom = "⚛️";
@@ -14,9 +15,14 @@ const dishObjs = items.map(dish, i => ({id: i, title: dish}))
 
 function Main({dishes}){
   return(
+    <>
+    <h2>Welcome to this beautiful restaurant!</h2>
+    <img src={chef} alt="A photo of a smiling chef owner" />
+    height={200}
     <ul>
       {dishes.map(dish => <li key={dish.id} style={{listStyleType: "none"}}>{dish.title}</li>)}
     </ul>
+    </>
   )
 }
 
