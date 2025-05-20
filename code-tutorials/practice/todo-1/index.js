@@ -24,11 +24,14 @@ getTodos.addEventListener('click', ()=>{
 	inputField.value = ''
 })
 
-let editBtn;
+let editBtn = document.createElement('input');
+editBtn.setAttribute('type','checkbox')
+
+todoListItemBox.appendChild(editBtn)
 
 function setTodos(){
 	editBtn.onclick = ()=>{
-	todoListItem.remove(  )                                            	
+	todoListItem.innerHTML = '<input type='text' placeholder='edit task' />';                                         	
 	}
 	
 }
