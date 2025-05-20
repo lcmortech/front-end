@@ -5,6 +5,7 @@ let inputField = document.getElementById('input')
 
 let todoBox = document.getElementById('todo-box')
 
+let todoList = []
 let todoListBox = document.createElement('div')
 let todoListItem = document.createElement('li')
 let todoListCheckBox = document.createElement('input')
@@ -21,20 +22,25 @@ getTodos.addEventListener('click', ()=>{
 	//console.log(todoItem)
 	todoBox.appendChild(todoListBox)
 	todoListItem.textContent = inputField.value 
+	//todoList.push(todoListItem)
+	todoList.forEach(item =>{ 
+		
+		todoList.push(item)})
 	inputField.value = ''
 })
 
-let editBtn = document.createElement('input');
+let editBtn = document.createElement('button');
 editBtn.setAttribute('type','checkbox')
 
-todoListItemBox.appendChild(editBtn)
+todoListBox.appendChild(editBtn)
 
-function setTodos(){
-	editBtn.onclick = ()=>{
-	todoListItem.innerHTML = '<input type='text' placeholder='edit task' />';                                         	
+
+editBtn.onclick = ()=>{
+	todoListItem.innerHTML = '<input id="edit-task" type="text" placeholder="edit task" />';  
+	editTask = document.getElementById('edit-task')
+	todoListItem.innerText = editTask.value		
 	}
 	
-}
 
 function deleteTodos(){
 	if (checkbox.checked){	
