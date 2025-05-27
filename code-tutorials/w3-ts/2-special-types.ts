@@ -21,3 +21,9 @@ Math.rounc(v); //no error as it can be "any" type
 //TYPE: NEVER
 //[never] effectively throws an error whenever it is defined
 //never is rarely used, esp by itself, its primary use is in advanced generics.
+let x: never = true; //Error: Type 'boolean' is not assignable to type 'never'.
+
+//TYPE: UNDEFINED & NULL
+//[undefined] and [null] are types that refer to the Javascript primitives undefined and null respectively
+let y: undefined = undefined;
+let z: null = null;
