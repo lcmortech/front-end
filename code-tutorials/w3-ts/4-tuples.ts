@@ -28,4 +28,10 @@ const ourReadOnlyTuple: readonly [number, boolean, string] = [5, true, "The Real
 ourReadOnlyTuple.push("Coding G took a day off")
 
 //Named Tuples
-//"Named tuples" Allow us to provide context for our values at each index
+//"Named tuples" allow us to provide context for our values at each index and provide more context for what our index values represent.
+const graph: [x: number, y: number] = [55.2, 41.3]
+
+//Destructuring Tuples
+//Since tuples are arrays we can also destructure them.
+const graph: [number,number] = [55.2, 41.3];
+const [x, y] = graph;
