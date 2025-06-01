@@ -13,4 +13,4 @@ const car = {
     type: "Toyota",
 };
 car.type = "Ford"; //no error
-car.type = 2; Error: Type 'number'
+car.type = 2; //Error: Type 'number'
