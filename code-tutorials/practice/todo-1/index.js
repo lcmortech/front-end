@@ -18,16 +18,7 @@ todoListItem.textContent =
 //todoListItem.appendChild(todoText)
 console.log(todoListItem)
 
-getTodos.addEventListener('click', ()=>{
-	//console.log(todoItem)
-	todoBox.appendChild(todoListBox)
-	todoListItem.textContent = inputField.value 
-	//todoList.push(todoListItem)
-	todoList.forEach(item =>{ 
-		
-		todoList.push(item)})
-	inputField.value = ''
-})
+getTodos.addEventListener('click', getTodoItem)
 
 let editBtn = document.createElement('button');
 editBtn.setAttribute('type','checkbox')
@@ -42,7 +33,16 @@ editBtn.onclick = ()=>{
 	}
 
 //function declarations
-function getTodoItem(){}
+function getTodoItem(){
+	//console.log(todoItem)
+	todoBox.appendChild(todoListBox)
+	todoListItem.textContent = inputField.value 
+	//todoList.push(todoListItem)
+	todoList.forEach(item =>{ 
+		
+		todoList.push(item)})
+	inputField.value = ''
+}
 
 function addTodoItem(){}
 
