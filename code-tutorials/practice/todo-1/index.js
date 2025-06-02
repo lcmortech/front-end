@@ -40,13 +40,21 @@ editBtn.onclick = ()=>{
 	editTask = document.getElementById('edit-task')
 	todoListItem.innerText = editTask.value		
 	}
-	
 
-function deleteTodos(){
+//function declarations
+function getTodoItem(){}
+
+function addTodoItem(){}
+
+function editTodoItem(){}
+
+function deleteTodoItem(){
 	if (checkbox.checked){	
 		nmtodoListItem.remove()
 	}
 }
+
+//function invocations
 
 /*
 <div>
