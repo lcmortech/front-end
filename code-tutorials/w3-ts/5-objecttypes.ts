@@ -14,3 +14,19 @@ const car = {
 };
 car.type = "Ford"; //no error
 car.type = 2; //Error: Type 'number'
+
+//Optional Properties
+//Optional properties are properties that don't have to be defined in the object definition.
+
+//Example without an optional property
+const car: {type: string, mileage: number} = {// Error: Property 'mileage' is missing in type '{ type: string; }' but required in type '{ type: string; mileage: number; }'.
+	type: "Toyota";
+	
+}
+car.mileage = 2000
+
+//Example with an optional property
+const car: { type: string, mileage?: number } = { // no error
+  type: "Toyota"
+};
+car.mileage = 2000;
