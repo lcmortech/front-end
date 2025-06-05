@@ -32,3 +32,16 @@ enum CardinalDirections {
 console.log(CardinalDirections.North);
 //logs 4
 console.log(CardinalDirections.West);
+
+//Numeric Enums - Fully Initialized
+//You can assign unique number values for each enum value. Then the values will not incremented automatically:
+enum StatusCodes {
+    NotFound = 404,
+    Success = 200,
+    Accepted = 202,
+    BadRequest = 400
+}
+
+console.log(StatusCodes.NotFound) //logs 404
+console.log(StatusCodes.Success) //logs 200
+
