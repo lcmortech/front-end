@@ -24,6 +24,4 @@ const car: Car = {
   model: carModel
 };
 
-//Interfaces
-//Interfaces are similar to type aliases, except they only apply to object types.
-
+s 
