@@ -36,3 +36,9 @@ const rectangle: Rectangle = {
   height: 20,
   width: 10
 }
+
+//Extending Interfaces
+//Interfaces can extend each other's definition.
+
+//Extending an interface means you are creating a new interface with the same properties as the original, plus something new.
+
