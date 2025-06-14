@@ -9,3 +9,9 @@ function getTime(): number {
     return new Date().getTime();
 }
 //If no return type is defined, TypeScript will attempt to infer it through the types of the variables or expressions returned.
+
+//Void Return Type
+//The type void can be used to indicate a function doesn't return any value.
+function printHello(): void {
+    console.log('Hello!');
+}
