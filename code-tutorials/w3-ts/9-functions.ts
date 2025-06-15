@@ -29,3 +29,9 @@ function pow(value: number, exponent: number = 10){
     return value ** exponent;
 }
 //TypeScript can also infer the type from the default value.
+
+//Named Parameters
+//Typing named parameters follows the same pattern as typing normal parameters.
+function divide({dividend, divisor}: ({dividend: number, divisor: number})){
+    return dividend / divisor;
+}
