@@ -22,3 +22,10 @@ function printHello(): void {
 function add(a: number, b: number, c?: number){
     return a + b + (c || 0);
 }
+
+//Default Parameters
+//For parameters with default values, the default vaue goes after the type annotation:
+function pow(value: number, exponent: number = 10){
+    return value ** exponent;
+}
+//TypeScript can also infer the type from the default value.
