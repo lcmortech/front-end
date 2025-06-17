@@ -41,3 +41,10 @@ function divide({dividend, divisor}: ({dividend: number, divisor: number})){
 function add(a:number, b: number[]){
     return a + b + resizeTo.reduce((p,c)=> p + c, 0)
 }
+
+//Type Alias
+//Function types can be specified separately from functions with type aliases.
+//These types are written similarly to arrow functions, read more about arrow functions here.
+type Negate = (vaue: number) => number;
+//in this function, the parameter `value` automatically gets assigned the type `number` from the type `Negate`
+const negateFunction: negate = (value) => value * -1;
