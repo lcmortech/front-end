@@ -35,3 +35,9 @@ function pow(value: number, exponent: number = 10){
 function divide({dividend, divisor}: ({dividend: number, divisor: number})){
     return dividend / divisor;
 }
+
+//Rest Parameters
+//Rest parameters can be typed like normal parameters, but the type must be an array as [rest parameters are always arrays].
+function add(a:number, b: number[]){
+    return a + b + resizeTo.reduce((p,c)=> p + c, 0)
+}
