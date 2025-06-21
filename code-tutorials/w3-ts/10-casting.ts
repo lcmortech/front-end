@@ -8,6 +8,16 @@
 let x: unkknown = 'hello';
 console.log((x as string).length);
 
+//*Casting doesn't actually change the type of the data within the variable, for example the following code will not work as expected since the variable x is still holds a number.
+let x: unknown = 4;
+console.log((x as string).length); // prints undefined since numbers don't have a length
+
+//*TypeScript will still attempt to typecheck casts to prevent casts that don't seem correct, for example the following will throw a type error since TypeScript knows casting a string to a number doesn't makes sense without converting the data:
+console.log((4 as string).length); 
+// Error: Conversion of type 'number' to type 'string' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+//The Force casting section below covers how to override this.
+
+
 //Casting with [<>]
 //Using <> works the same as casting with as.
 let x: unknown = 'hello'
