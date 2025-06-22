@@ -1,0 +1,10 @@
+Site Types (diff folders for each)
+- Restaurant
+- Hair Salon
+- Barber Shop
+- Cafe
+- Smoothie Shop
+- Bar
+- Car Dealership
+- Auto repair
+- Daycare
