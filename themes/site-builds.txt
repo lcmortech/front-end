@@ -8,3 +8,13 @@ Site Types (diff folders for each)
 - Car Dealership
 - Auto repair
 - Daycare
+- Job Portfolio
+(choose 3)
+- Bookstore
+- Newsletter
+
+==
+
+- Job Portfolio
+- Daycare (Landing Page)
+- Newsletter
