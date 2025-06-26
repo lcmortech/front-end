@@ -34,3 +34,5 @@ class Person {
 const person = new Person("Jane");
 console.log(person.getName()); // person.name isn't accessible from outside the class since it's private
 //The this keyword in a class usually refers to the instance of the class. Read more about this here.
+
+//The this keyword in a class usually refers to the instance of the class. Read more about this here.
