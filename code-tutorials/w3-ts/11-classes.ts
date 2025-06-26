@@ -36,3 +36,6 @@ console.log(person.getName()); // person.name isn't accessible from outside the 
 //The this keyword in a class usually refers to the instance of the class. Read more about this here.
 
 //The this keyword in a class usually refers to the instance of the class. Read more about this here.
+
+//Parameter Properties
+//TypeScript provides a convenient way to define class members in the constructor, by adding a visibility modifiers to the parameter.
