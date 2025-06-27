@@ -51,3 +51,7 @@ class Person {
 
 const person = new Person("Jane");
 console.log(person.getName());
+
+//Readonly
+//Similar to arrays, the readonly keyword can prevent class members from being changed.
+
