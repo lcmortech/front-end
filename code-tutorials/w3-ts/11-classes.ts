@@ -83,3 +83,4 @@ class Rectangle implements Shape {
     return this.width * this.height;
   }
 }
+//A class can implement multiple interfaces by listing each one after implements, separated by a comma like so: class Rectangle implements Shape, Colored {
