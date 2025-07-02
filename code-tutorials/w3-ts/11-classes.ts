@@ -84,3 +84,6 @@ class Rectangle implements Shape {
   }
 }
 //A class can implement multiple interfaces by listing each one after implements, separated by a comma like so: class Rectangle implements Shape, Colored {
+
+//Inheritance: Extends
+//Classes can extend each other through the extends keyword. A class can only extends one other class.
