@@ -140,3 +140,4 @@ class Square extends Rectangle {
   }
 }
 
+//By default the override keyword is optional when overriding a method, and only helps to prevent accidentally overriding a method that does not exist. Use the setting noImplicitOverride to force it to be used when overriding.
