@@ -161,3 +161,4 @@ class Rectangle extends Polygon {
     return this.width * this.height;
   }
 }
+//Abstract classes cannot be directly instantiated, as they do not have all their members implemented.
