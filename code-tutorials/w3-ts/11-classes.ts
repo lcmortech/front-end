@@ -144,6 +144,7 @@ class Square extends Rectangle {
 
 //Abstract Classes
 //Classes can be written in a way that allows them to be used as a base class for other classes without having to implement all the members. This is done by using the abstract keyword. Members that are left unimplemented also use the abstract keyword.
+
 abstract class Polygon {
   public abstract getArea(): number;
 
@@ -161,4 +162,3 @@ class Rectangle extends Polygon {
     return this.width * this.height;
   }
 }
-//Abstract classes cannot be directly instantiated, as they do not have all their members implemented.
