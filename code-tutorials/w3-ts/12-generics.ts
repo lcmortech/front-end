@@ -5,3 +5,6 @@
 //Generics makes it easier to write reusable code.
 //push test
 //fixing github push bug
+
+//Functions
+//Generics with functions help make more generalized methods which more accurately represent the types used and returned.
