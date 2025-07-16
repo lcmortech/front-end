@@ -16,5 +16,5 @@ console.log(createPair<string, number>('hello', 42)); //['hello', 42]
 //TypeScript can also infer the type of the generic parameter from the function parameters.
 
 //Classes
-
+//Generics can be used to create generalized classes, like Map.
 
