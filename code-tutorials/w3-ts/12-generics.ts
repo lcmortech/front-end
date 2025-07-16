@@ -14,3 +14,7 @@ function createPaair<S, T>(v1: S, v2: T): [S, T] {
 console.log(createPair<string, number>('hello', 42)); //['hello', 42]
 
 //TypeScript can also infer the type of the generic parameter from the function parameters.
+
+//Classes
+
+
