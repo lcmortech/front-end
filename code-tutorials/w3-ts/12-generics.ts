@@ -39,3 +39,5 @@ class NamedValue<T> {
   let value = new NamedValue<number>('myNumber');
   value.setValue(10);
   console.log(value.toString()); // myNumber: 10
+
+  //TypeScript can also infer the type of the generic parameter if it's used in a constructor parameter.
