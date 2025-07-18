@@ -41,3 +41,7 @@ class NamedValue<T> {
   console.log(value.toString()); // myNumber: 10
 
   //TypeScript can also infer the type of the generic parameter if it's used in a constructor parameter.
+
+//Type Aliases
+//Generics in type aliases allow creating types that are more reusable.
+
