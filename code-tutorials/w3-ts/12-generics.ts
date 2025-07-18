@@ -44,4 +44,6 @@ class NamedValue<T> {
 
 //Type Aliases
 //Generics in type aliases allow creating types that are more reusable.
+type Wrapped<T> = { value: T };
 
+const wrappedValue: Wrapped<number> = { value: 10 };
