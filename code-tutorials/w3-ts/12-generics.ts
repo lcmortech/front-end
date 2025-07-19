@@ -47,3 +47,8 @@ class NamedValue<T> {
 type Wrapped<T> = { value: T };
 
 const wrappedValue: Wrapped<number> = { value: 10 };
+
+//This also works with interfaces with the following syntax: interface Wrapped<T> 
+
+//Default Values
+//Generics can be assigned default values which apply if no other value is specified or inferred. 
