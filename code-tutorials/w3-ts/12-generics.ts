@@ -73,3 +73,7 @@ class NamedValue<T = string> {
 let value = new NamedValue('myNumber');
 value.setValue('myValue');
 console.log(value.toString()); // myNumber: myValue
+
+//Extends
+//Constraints can be added to generics to limit what's allowed. The constraints make it possible to rely on a more specific type when using the generic type.
+
