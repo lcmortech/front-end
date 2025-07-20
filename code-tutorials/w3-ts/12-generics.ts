@@ -76,4 +76,8 @@ console.log(value.toString()); // myNumber: myValue
 
 //Extends
 //Constraints can be added to generics to limit what's allowed. The constraints make it possible to rely on a more specific type when using the generic type.
+function createLoggedPair<S extends string | number, T extends string | number>(v1: S, v2: T): [S, T] {
+  console.log(`creating pair: v1='${v1}', v2='${v2}'`);
+  return [v1, v2];
+}
 
