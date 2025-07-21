@@ -81,3 +81,4 @@ function createLoggedPair<S extends string | number, T extends string | number>(
   return [v1, v2];
 }
 
+//This can be combined with a default value.
