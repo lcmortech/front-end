@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" data-theme>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Author site — stories, reviews, blog, news and contact." />
+  <title>Author Name — Stories & News</title>
+
+  <!-- Preconnect/preload (best practice when using local fonts or heavy assets) -->
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icons (inline SVGs used in markup; no external icons needed) -->
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="/" aria-label="Homepage — Author Name">
+          <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="currentColor" />
+          </svg>
+          <span class="site-title">Author Name</span>
+        </a>
+      </div>
+
+      <nav class="primary-nav" role="navigation" aria-label="Primary">
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+          <span class="visually-hidden">Toggle menu</span>
+          ☰
+        </button>
+
+        <ul id="primary-menu" class="menu" hidden>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#reviews">Book Reviews</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark and light mode">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading" role="region">
+      <h1 id="hero-heading">Stories that breathe — <small>new and archived</small></h1>
+      <p class="lead">A place for short stories, book reviews, occasional news, and behind-the-scenes posts.</p>
+      <p><a class="cta" href="#stories">Read the latest</a></p>
+    </section>
+
+    <!-- Stories -->
+    <section id="stories" class="stories" aria-labelledby="stories-heading" role="region">
+      <h2 id="stories-heading">Stories</h2>
+
+      <div class="story-grid" aria-live="polite">
+        <!-- Example story cards — populate server-side or via JS for many items -->
+        <article class="story-card" aria-labelledby="story1-title">
+          <h3 id="story1-title">The Last Lantern</h3>
+          <p class="meta">Short story · 2,400 words · <time datetime="2025-07-01">July 1, 2025</time></p>
+          <p class="excerpt">A keeper of light learns what it costs to keep a village safe.</p>
+          <a class="read-more" href="#story-1" aria-label="Read The Last Lantern">Read →</a>
+        </article>
+
+        <article class="story-card" aria-labelledby="story2-title">
+          <h3 id="story2-title">Map of Quiet</h3>
+          <p class="meta">Flash fiction · 900 words · <time datetime="2025-03-12">Mar 12, 2025</time></p>
+          <p class="excerpt">A mapmaker draws a coastline where memories meet the sea.</p>
+          <a class="read-more" href="#story-2" aria-label="Read Map of Quiet">Read →</a>
+        </article>
+
+        <!-- More cards... -->
+      </div>
+    </section>
+
+    <!-- Book Reviews -->
+    <section id="reviews" class="reviews" aria-labelledby="reviews-heading" role="region">
+      <h2 id="reviews-heading">Book Reviews</h2>
+
+      <div class="reviews-grid">
+        <article class="review" aria-labelledby="rev1-title">
+          <h3 id="rev1-title">Title: *The Green Orchard*</h3>
+          <p class="meta">Reviewed June 2025 · 4/5</p>
+          <p class="excerpt">An intimate novel about family and seasons — lyrical prose with a patient pace.</p>
+          <a href="#review-1" class="read-more">Full review</a>
+        </article>
+
+        <article class="review" aria-labelledby="rev2-title">
+          <h3 id="rev2-title">Title: *Glass Hollow*</h3>
+          <p class="meta">Reviewed May 2025 · 5/5</p>
+          <p class="excerpt">A stunning speculative debut — a voice that refuses to let go.</p>
+          <a href="#review-2" class="read-more">Full review</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="blog" aria-labelledby="blog-heading" role="region">
+      <h2 id="blog-heading">Blog</h2>
+      <ul class="posts-list">
+        <li>
+          <article aria-labelledby="post1-title">
+            <h3 id="post1-title">On Revisions: How I Edit a Draft</h3>
+            <p class="meta">July 2025 · <time datetime="2025-07-20">Jul 20, 2025</time></p>
+            <p>Notes about structure, rhythm, and when to step away from a page.</p>
+            <a class="read-more" href="#post-1">Read</a>
+          </article>
+        </li>
+
+        <li>
+          <article aria-labelledby="post2-title">
+            <h3 id="post2-title">Writing While Traveling</h3>
+            <p class="meta">June 2025 · <time datetime="2025-06-10">Jun 10, 2025</time></p>
+            <p>Tips on sketching scenes and keeping a portable reading list.</p>
+            <a class="read-more" href="#post-2">Read</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <!-- News / Updates timeline -->
+    <section id="news" class="news" aria-labelledby="news-heading" role="region">
+      <h2 id="news-heading">News & Updates</h2>
+
+      <ol class="timeline" aria-live="polite">
+        <li>
+          <time datetime="2025-08-01">Aug 1, 2025</time>
+          <p>Short story <em>"The Last Lantern"</em> nominated for the Aurora Short Prize.</p>
+        </li>
+        <li>
+          <time datetime="2025-05-15">May 15, 2025</time>
+          <p>New newsletter launched — sign up below to receive monthly updates.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about" aria-labelledby="about-heading" role="region">
+      <h2 id="about-heading">About</h2>
+      <div class="about-grid">
+        <figure>
+          <!-- Accessible author portrait (use real image in production) -->
+          <svg width="200" height="200" role="img" aria-label="Author portrait placeholder">
+            <rect width="100%" height="100%" rx="12" ry="12" fill="currentColor" />
+          </svg>
+          <figcaption class="visually-hidden">Author Name — portrait</figcaption>
+        </figure>
+        <div>
+          <p>Author Name writes fiction and essays. Their work explores memory, landscape, and the small violences and consolations of everyday life.</p>
+          <p>Represented by: <strong>Agent Name</strong> (if applicable). Available for readings and workshops.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading" role="region">
+      <h2 id="contact-heading">Contact</h2>
+
+      <div class="contact-grid">
+        <form id="contact-form" novalidate aria-describedby="contact-desc">
+          <p id="contact-desc">Send a message — response within ~2–3 business days. (This form is client-side demo only; integrate with a backend or service.)</p>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required aria-required="true" minlength="2" maxlength="100" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" maxlength="150" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+
+          <div class="form-actions">
+            <button id="contact-submit" type="submit">Send message</button>
+            <button id="contact-reset" type="reset">Reset</button>
+          </div>
+
+          <div id="form-status" role="status" aria-live="polite" class="form-status" hidden></div>
+        </form>
+
+        <aside class="contact-info" aria-labelledby="contact-info-heading">
+          <h3 id="contact-info-heading">Other ways to reach</h3>
+          <ul>
+            <li>Email: <a href="mailto:author@example.com">author@example.com</a></li>
+            <li>Newsletter: <a href="#newsletter-signup">Sign up</a></li>
+            <li>Publicist / Agent: <span>agent@example.com</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Author Name. All rights reserved.</p>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#credits">Credits</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
