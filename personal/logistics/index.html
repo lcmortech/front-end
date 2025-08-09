@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TransAxis Logistics — Global Shipping & Smart Supply Chain</title>
+  <meta name="description" content="TransAxis Logistics — End-to-end logistics & supply chain solutions. Real-time tracking, secure warehousing, & optimized freight." />
+  <meta name="theme-color" content="#0b4f6c" />
+
+  <!-- Structured data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TransAxis Logistics",
+    "url": "https://example.com",
+    "logo": "https://example.com/logo.png",
+    "sameAs": [],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+1-555-0123",
+      "contactType": "customer support",
+      "areaServed": "US"
+    }]
+  }
+  </script>
+
+  <style>
+    /* CSS Reset (lightweight) */
+    :root{
+      --bg:#f7fbfc;
+      --card:#ffffff;
+      --accent:#0b89a9;
+      --accent-2:#0b4f6c;
+      --muted:#6b7a86;
+      --glass: rgba(11,73,108,0.06);
+      --radius:12px;
+      --max-width:1200px;
+      --container-padding:1.25rem;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg) 0%, #eef6f9 100%);
+      color:#0f1720;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+      font-size:16px;
+    }
+
+    /* Skip link for keyboard users */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      background:#000;
+      color:#fff;
+      padding:.5rem .75rem;
+      z-index:1000;
+    }
+    .skip-link:focus{left:1rem; top:1rem; border-radius:6px;}
+
+    /* Container */
+    .wrap{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding: clamp(.75rem, 2vw, 2rem);
+    }
+
+    /* Header + nav */
+    header{
+      background:transparent;
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(6px);
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:.5rem 0;
+    }
+    .brand{
+      display:flex;
+      gap:.75rem;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo {
+      width:44px; height:44px; display:inline-grid; place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      border-radius:10px;
+      color:white; font-weight:700; font-size:1.05rem;
+      box-shadow:0 6px 18px rgba(11,73,108,0.15);
+    }
+    nav[aria-label="Primary"]{
+      display:flex; gap:1rem; align-items:center;
+    }
+    .nav-list{display:flex; gap:.5rem; list-style:none; margin:0; padding:0;}
+    .nav-list a{
+      display:inline-block;
+      padding:.5rem .75rem;
+      border-radius:8px;
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+    }
+    .nav-list a[aria-current="page"]{color:var(--accent-2)}
+    .cta{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white; border:none; padding:.6rem .9rem; border-radius:10px;
+      font-weight:700; cursor:pointer;
+    }
+
+    /* Mobile menu button */
+    .menu-toggle{display:none; background:transparent; border:1px solid transparent; padding:.4rem; border-radius:8px}
+    .menu-toggle:focus{outline:3px solid rgba(11,137,169,0.18)}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:clamp(1rem,3vw,2rem);
+      align-items:center;
+      padding: clamp(1rem, 3vw, 2.25rem) 0;
+    }
+    .eyebrow{color:var(--accent-2); font-weight:700; letter-spacing:.06em; font-size:.85rem;}
+    h1{font-size:clamp(1.6rem,3.8vw,2.6rem); margin:.35rem 0 0; line-height:1.07}
+    p.lead{color:var(--muted); margin:.6rem 0 1.2rem; max-width:55ch;}
+    .hero-actions{display:flex; gap:.75rem; flex-wrap:wrap;}
+    .btn-outline{background:transparent; border:2px solid var(--accent-2); color:var(--accent-2); padding:.6rem .9rem; border-radius:10px; font-weight:700; cursor:pointer;}
+
+    /* Card for tracking / features */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:1rem;
+      box-shadow:0 6px 30px rgba(11,73,108,0.06);
+    }
+    .tracking {
+      display:flex; flex-direction:column; gap:.5rem;
+    }
+    .tracking label{font-size:.85rem; color:var(--muted); font-weight:700;}
+    .tracking input[type="text"]{
+      padding:.6rem .75rem; border-radius:8px; border:1px solid #e5eef2; width:100%;
+      font-size:1rem;
+    }
+    .tracking button{margin-top:.5rem;}
+
+    /* Features grid */
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1rem;
+      margin:1.25rem 0 0;
+    }
+    .feature{
+      display:flex; gap:.75rem; align-items:flex-start;
+    }
+    .feature svg{min-width:36px; height:36px; margin-top:.25rem}
+
+    /* Metrics strip */
+    .metrics{
+      display:flex; gap:1rem; justify-content:space-between; margin-top:1.25rem;
+      background:linear-gradient(90deg, rgba(11,73,108,0.04), rgba(11,137,169,0.02));
+      padding:.8rem; border-radius:12px;
+    }
+    .metric{flex:1; text-align:center}
+    .metric .num{font-size:1.35rem; font-weight:800; color:var(--accent-2)}
+
+    /* Services & footer */
+    main > section{margin-top:2rem}
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1rem;
+    }
+
+    footer{
+      margin-top:2.5rem; padding:1.5rem 0; color:var(--muted); font-size:.95rem;
+      border-top:1px solid #e8f1f4;
+    }
+
+    /* Modal (accessible) */
+    .modal-backdrop{
+      position:fixed; inset:0; display:none; align-items:center; justify-content:center;
+      background:rgba(2,6,23,0.45); z-index:120;
+    }
+    .modal{background:var(--card); border-radius:12px; width:min(720px,96%); padding:1.25rem; box-shadow:0 12px 48px rgba(11,73,108,0.3)}
+    .modal[aria-hidden="false"]{display:block}
+
+    /* Focus and accessibility */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus{
+      outline:3px solid rgba(11,137,169,0.2);
+      outline-offset:2px;
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      nav[aria-label="Primary"]{display:none}
+      .menu-toggle{display:inline-block}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .metric .num { transition: none !important; }
+    }
+
+    /* Small helpers */
+    .muted{color:var(--muted)}
+    .small{font-size:.85rem}
+  </style>
+</head>
+<body>
+  <!-- Skip to main content -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner" class="wrap" aria-hidden="false">
+    <div class="topbar" role="navigation" aria-label="Top navigation">
+      <a class="brand" href="#" aria-label="TransAxis Logistics home">
+        <span class="logo" aria-hidden="true">TA</span>
+        <div>
+          <div style="font-weight:800">TransAxis</div>
+          <div class="small muted" style="margin-top:2px">Smart Logistics</div>
+        </div>
+      </a>
+
+      <nav aria-label="Primary" role="navigation">
+        <ul class="nav-list" role="menubar" aria-hidden="false">
+          <li role="none"><a role="menuitem" href="#services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#why-us">Why us</a></li>
+          <li role="none"><a role="menuitem" href="#clients">Clients</a></li>
+          <li role="none"><a role="menuitem" href="#contact" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex; gap:.5rem; align-items:center">
+        <button class="menu-toggle" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="#0b4f6c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="cta" id="openContact" aria-haspopup="dialog">Get a Quote</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav (progressive enhancement) -->
+    <nav id="mobileMenu" style="display:none" aria-label="Mobile primary" role="navigation">
+      <ul style="list-style:none;padding:0;margin:.75rem 0;display:flex;flex-direction:column;gap:.4rem">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why us</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" role="main" class="wrap" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="heroHeading">
+      <div>
+        <div class="eyebrow" aria-hidden="true">GLOBAL • SMART • SUSTAINABLE</div>
+        <h1 id="heroHeading">Move goods faster with predictive logistics & real-time tracking</h1>
+        <p class="lead">Powerful routing algorithms, secure warehousing, and end-to-end visibility — optimized to reduce transit time and total logistics cost.</p>
+
+        <div class="hero-actions" role="region" aria-label="primary actions">
+          <a class="cta" href="#contact">Request a Quote</a>
+          <button class="btn-outline" id="demoBtn">Watch Demo (30s)</button>
+        </div>
+
+        <div class="features" aria-hidden="false">
+          <div class="feature card" role="article" aria-labelledby="f1">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="36" height="36"><path d="M3 7h18" stroke="#0b4f6c" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <div id="f1" style="font-weight:700">Real-time Tracking</div>
+              <div class="small muted">Track shipments across modes with live ETA updates.</div>
+            </div>
+          </div>
+
+          <div class="feature card" role="article" aria-labelledby="f2">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="36" height="36"><path d="M3 7h18" stroke="#0b89a9" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <div id="f2" style="font-weight:700">AI Route Optimization</div>
+              <div class="small muted">Reduce fuel and idle time with machine-learned routing.</div>
+            </div>
+          </div>
+
+          <div class="feature card" role="article" aria-labelledby="f3">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" width="36" height="36"><path d="M3 7h18" stroke="#0b4f6c" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <div>
+              <div id="f3" style="font-weight:700">Secure Warehousing</div>
+              <div class="small muted">Temperature-controlled storage and 24/7 monitoring.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics with animated counters -->
+        <div class="metrics" role="list" aria-label="Key metrics">
+          <div class="metric card" role="listitem">
+            <div class="num" data-target="128" aria-hidden="true">0</div>
+            <div class="small muted">Global Hubs</div>
+          </div>
+
+          <div class="metric card" role="listitem">
+            <div class="num" data-target="35" aria-hidden="true">0</div>
+            <div class="small muted">Countries served</div>
+          </div>
+
+          <div class="metric card" role="listitem">
+            <div class="num" data-target="98" aria-hidden="true">0</div>
+            <div class="small muted">On-time deliveries (%)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: tracking card -->
+      <aside aria-label="Shipment tracking" class="card tracking" role="region">
+        <h2 style="margin:0 0 .5rem 0">Track your shipment</h2>
+        <form id="trackForm" aria-describedby="trackDesc">
+          <div id="trackDesc" class="small muted">Enter your tracking ID to get the latest status.</div>
+          <label for="trackingId" class="small" style="margin-top:.5rem">Tracking ID</label>
+          <input id="trackingId" name="trackingId" type="text" inputmode="text" autocomplete="off" placeholder="e.g. TX-12345-987" aria-required="true" required />
+          <button class="cta" type="submit" aria-label="Track shipment">Track</button>
+        </form>
+
+        <div id="trackResult" role="status" aria-live="polite" style="margin-top:.6rem"></div>
+
+        <hr style="margin:.75rem 0;border:none;border-top:1px solid #eef6f8"/>
+
+        <div class="small muted">Instant quotes:</div>
+        <div style="display:flex; gap:.4rem; margin-top:.5rem">
+          <button class="btn-outline" aria-label="Get ocean quote">Ocean</button>
+          <button class="btn-outline" aria-label="Get air quote">Air</button>
+          <button class="btn-outline" aria-label="Get ground quote">Ground</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-labelledby="servicesHeading">
+      <h2 id="servicesHeading" style="margin-top:1rem">Our Services</h2>
+      <p class="muted small">Flexible solutions across freight, warehousing, and fulfillment.</p>
+
+      <div class="services-grid" role="list">
+        <article class="card" role="listitem" aria-labelledby="s1">
+          <h3 id="s1">Freight Forwarding</h3>
+          <p class="small muted">Sea, air, and multimodal logistics with customs clearance.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="s2">
+          <h3 id="s2">Contract Warehousing</h3>
+          <p class="small muted">Secure storage with automated picking & real-time inventory.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="s3">
+          <h3 id="s3">Last-Mile Delivery</h3>
+          <p class="small muted">City network optimized for speed and reduced returns.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="s4">
+          <h3 id="s4">Custom Solutions</h3>
+          <p class="small muted">Tailored SLAs, IoT integrations, and green logistics options.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why-us" aria-labelledby="whyHeading">
+      <h2 id="whyHeading" style="margin-top:1.25rem">Why TransAxis</h2>
+      <p class="muted small">We combine industry-experienced operations with modern tech to lower cost and risk.</p>
+
+      <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap;">
+        <div class="card" style="flex:1;min-width:260px;">
+          <h3>Compliance & Security</h3>
+          <p class="small muted">SOC2-level monitoring, tamper-evident packaging, and global customs expertise.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:260px;">
+          <h3>Sustainability</h3>
+          <p class="small muted">Carbon-aware routing and consolidation to reduce emissions per shipment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" aria-labelledby="clientsHeading">
+      <h2 id="clientsHeading" style="margin-top:1.25rem">Trusted by</h2>
+      <p class="small muted">Startups to Fortune 100 companies rely on TransAxis.</p>
+      <div style="display:flex; gap:1rem; margin-top:.75rem; align-items:center; flex-wrap:wrap;">
+        <!-- Example of accessible logos (svg placeholders) -->
+        <div class="card" style="padding:.6rem .9rem;"> <svg width="120" height="36" aria-hidden="true"><rect width="120" height="36" rx="6" fill="#e6f4f6"/></svg></div>
+        <div class="card" style="padding:.6rem .9rem;"> <svg width="120" height="36" aria-hidden="true"><rect width="120" height="36" rx="6" fill="#f3f7fb"/></svg></div>
+        <div class="card" style="padding:.6rem .9rem;"> <svg width="120" height="36" aria-hidden="true"><rect width="120" height="36" rx="6" fill="#eef6f9"/></svg></div>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section id="contact" aria-labelledby="contactHeading" style="margin-top:1.5rem">
+      <h2 id="contactHeading">Get in touch</h2>
+      <p class="muted small">Fill out the form and our logistics team will respond within one business day.</p>
+
+      <form id="contactForm" class="card" aria-describedby="contactNote" novalidate>
+        <div id="contactNote" class="small muted">Fields marked with * are required.</div>
+
+        <div style="display:grid; gap:.6rem; grid-template-columns:1fr 1fr; margin-top:.6rem;">
+          <label class="small" for="name">Full name *</label>
+          <input id="name" name="name" type="text" required aria-required="true" />
+
+          <label class="small" for="company">Company</label>
+          <input id="company" name="company" type="text" />
+
+          <label class="small" for="email">Work email *</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+
+          <label class="small" for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" />
+        </div>
+
+        <label class="small" for="message" style="margin-top:.6rem">Tell us about your shipment *</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+
+        <div style="display:flex; gap:.6rem; margin-top:.6rem; align-items:center;">
+          <button class="cta" type="submit">Request quote</button>
+          <button type="button" class="btn-outline" id="clearForm">Clear</button>
+          <div id="formStatus" aria-live="polite" class="small muted" style="margin-left:auto"></div>
+        </div>
+      </form>
+    </section>
+
+    <footer role="contentinfo" class="wrap">
+      <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <div>
+          <strong>TransAxis Logistics</strong><br />
+          <span class="small muted">© <span id="year"></span> TransAxis, Inc.</span>
+        </div>
+
+        <nav aria-label="Footer">
+          <a href="#" class="small muted" style="margin-right:.6rem">Privacy</a>
+          <a href="#" class="small muted" style="margin-right:.6rem">Terms</a>
+          <a href="#" class="small muted">Sustainability</a>
+        </nav>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Accessible contact modal -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal" role="document">
+      <h2 id="modalTitle">Request a tailored quote</h2>
+      <p class="small muted">Quick form — we'll follow up with a detailed estimate.</p>
+
+      <form id="modalForm" style="margin-top:.6rem" novalidate>
+        <label class="small" for="m_name">Name *</label>
+        <input id="m_name" name="m_name" required />
+
+        <label class="small" for="m_email">Email *</label>
+        <input id="m_email" name="m_email" type="email" required />
+
+        <label class="small" for="m_details">Shipment details *</label>
+        <textarea id="m_details" name="m_details" rows="3" required></textarea>
+
+        <div style="display:flex; gap:.6rem; margin-top:.6rem; justify-content:flex-end">
+          <button type="button" class="btn-outline" id="modalClose">Cancel</button>
+          <button type="submit" class="cta">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ==== Progressive enhancement & accessible UI behavior ====
+    (function () {
+      // Utility: query
+      const $ = (s, el = document) => el.querySelector(s);
+      const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+
+      // Year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileBtn && mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.style.display = expanded ? 'none' : 'block';
+        mobileMenu.querySelector('a')?.focus();
+      });
+
+      // Modal logic: open/close with aria-hidden & focus trap basics
+      const modal = document.getElementById('modal');
+      const openContact = document.getElementById('openContact');
+      const modalClose = document.getElementById('modalClose');
+      const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select';
+      let lastActive = null;
+
+      function openModal() {
+        lastActive = document.activeElement;
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        // focus first input
+        const first = modal.querySelector('input, textarea, button');
+        first && first.focus();
+        // simple focus trap
+        document.addEventListener('focus', trapFocus, true);
+      }
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        modal.style.display = 'none';
+        document.removeEventListener('focus', trapFocus, true);
+        lastActive && lastActive.focus();
+      }
+      function trapFocus(e) {
+        if (!modal.contains(e.target)) {
+          e.stopPropagation();
+          modal.querySelector('input, textarea, button')?.focus();
+        }
+      }
+
+      openContact.addEventListener('click', openModal);
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (ev) => {
+        if (ev.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+      });
+
+      // Demo button (aria-live announcement)
+      $('#demoBtn').addEventListener('click', () => {
+        const ariaAnnounce = document.createElement('div');
+        ariaAnnounce.setAttribute('role', 'status');
+        ariaAnnounce.setAttribute('aria-live', 'polite');
+        ariaAnnounce.className = 'visually-hidden';
+        ariaAnnounce.style.position='absolute';
+        ariaAnnounce.style.left='-9999px';
+        ariaAnnounce.textContent = 'Demo starting: 30 second overview video.';
+        document.body.appendChild(ariaAnnounce);
+        setTimeout(()=> ariaAnnounce.remove(), 3000);
+        // In real product we'd open a lightweight player
+        alert('Demo: Imagine a 30s demo playing...'); // fallback
+      });
+
+      // Tracking form (progressive simulated lookup)
+      const trackForm = document.getElementById('trackForm');
+      const trackResult = document.getElementById('trackResult');
+      trackForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const id = document.getElementById('trackingId').value.trim();
+        if (!id) {
+          trackResult.textContent = 'Please enter a valid tracking ID.';
+          return;
+        }
+        trackResult.textContent = 'Looking up shipment...';
+        // Simulated async: in production, call API, then update DOM & aria-live.
+        setTimeout(() => {
+          // Minimal validation example: pretend IDs starting with "TX-" exist
+          if (id.toUpperCase().startsWith('TX-')) {
+            trackResult.innerHTML = `<strong>Status:</strong> In transit — expected delivery in 2 days. <span class="small muted">Last updated: ${new Date().toLocaleString()}</span>`;
+          } else {
+            trackResult.textContent = 'No record found for that ID. Please check and try again.';
+          }
+        }, 700);
+      });
+
+      // Animated counters (respecting prefers-reduced-motion)
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced) {
+        $$('.num').forEach(el => {
+          const target = Number(el.dataset.target) || 0;
+          let current = 0;
+          const duration = 1200;
+          const stepTime = Math.max(16, Math.floor(duration / Math.max(1, target)));
+          const increment = Math.ceil(target / (duration / stepTime));
+          const tick = () => {
+            current = Math.min(target, current + increment);
+            el.textContent = current;
+            if (current < target) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        });
+      } else {
+        // Reduced motion: set targets instantly
+        $$('.num').forEach(el => el.textContent = el.dataset.target);
+      }
+
+      // Form behaviors (contact + modal) with accessible validation messages
+      const contactForm = document.getElementById('contactForm');
+      const formStatus = document.getElementById('formStatus');
+      contactForm.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const form = ev.currentTarget;
+        const data = new FormData(form);
+        // Basic validation: require name, email, message
+        const name = data.get('name').trim();
+        const email = data.get('email').trim();
+        const message = data.get('message').trim();
+        if (!name || !email || !message) {
+          formStatus.textContent = 'Please fill all required fields.';
+          formStatus.style.color = 'crimson';
+          return;
+        }
+        formStatus.textContent = 'Sending…';
+        formStatus.style.color = 'var(--muted)';
+        // Simulated send
+        setTimeout(() => {
+          formStatus.textContent = 'Thanks — we received your request and will follow up within one business day.';
+          formStatus.style.color = 'green';
+          form.reset();
+        }, 900);
+      });
+
+      // Clear form button
+      document.getElementById('clearForm').addEventListener('click', () => {
+        contactForm.reset();
+        document.getElementById('formStatus').textContent = '';
+      });
+
+      // Modal form submit (simulate)
+      document.getElementById('modalForm').addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        modal.setAttribute('aria-hidden', 'true');
+        modal.style.display = 'none';
+        alert('Thanks — your request was sent. We will contact you shortly.');
+      });
+
+      // Small accessibility: add role/visually hidden style for assistive live regions if needed
+      // (we used aria-live inline where necessary)
+    })();
+  </script>
+</body>
+</html>
