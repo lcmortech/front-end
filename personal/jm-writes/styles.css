@@ -13,3 +13,7 @@ body {
     width: 100vh;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
 }
+
+h1, h2, h3, h4 {
+    text-align: center;
+}
