@@ -16,6 +16,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
+article {
+    margin: 1.5em;
+}
+
 h1, h2, h3, h4 {
     text-align: center;
 }
