@@ -13,8 +13,15 @@ body {
     width: 100vh;
   /*  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
     */
-    font-family: Xirod, sans-serif;
+    font-family: ;sans-serif;
   }
+  
+@font-face {
+  font-family: 'Xirod'; /* Choose a name for your font */
+  src: url('./Xirod.otf') format('truetype'); /* Path to your font file and its format */
+  /* You can add more src declarations for different font formats for broader browser compatibility */
+    }
+
 
 article {
     margin: 1.5em;
@@ -22,4 +29,5 @@ article {
 
 h1, h2, h3, h4 {
     text-align: center;
+	font-family: 'xirod';
 }
