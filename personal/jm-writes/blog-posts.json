@@ -17,14 +17,17 @@
 		"title": "Heavy Day...",
 		"datetime": "Aug 6, 2025",
 		"content": "My aunt passed away today. It's tough. I'll continue updates when I can. Peace, y'all."
+	},
+	{
+		"id": 4,
+		"title": "Burgers and Shows in NJ",
+		"datetime": "Aug 20, 2025",
+		"content": "I went to see AJJ last night! My first AJJ show ever and it was a blast! Special thanks to Katherine for hanging with me! I def needed it!"
 	}
 ]
 
 
-					<h4>Burgers and Shows in NJ</h3>
-					<h5>Aug 20, 2025</h4>
-					<p>I went to see AJJ last night! My first AJJ show ever and it was a blast! Special thanks to Katherine for hanging with me! I def needed it!</p>
-				</article>
+					
                 <article>
                 	<h4>Catching Up on Anime</h3>
                 	<h5>Aug 22, 2025</h4>
